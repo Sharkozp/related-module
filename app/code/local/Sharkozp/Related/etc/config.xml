@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sharkozp_Related>
+            <version>1.0.0</version>
+        </Sharkozp_Related>
+    </modules>
+    <global>
+        <models>
+            <sharkozp_related>
+                <class>Sharkozp_Related_Model</class>
+            </sharkozp_related>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <catalog_product_save_before>
+                <observers>
+                    <sharkozp_related_product>
+                        <type>singleton</type>
+                        <class>sharkozp_related/observer</class>
+                        <method>saveRelatedProducts</method>
+                    </sharkozp_related_product>
+                </observers>
+            </catalog_product_save_before>
+        </events>
+    </adminhtml>
+</config>
